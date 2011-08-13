@@ -1,0 +1,14 @@
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\auctionbaseUI.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\auctionbaseUI.pdb
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\EntityFramework.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.Web.Mvc.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\WebActivator.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\EntityFramework.xml
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.pdb
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.xml
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.Web.Mvc.pdb
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\bin\Ninject.Web.Mvc.xml
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\obj\Debug\auctionbaseUI.dll
+C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\obj\Debug\auctionbaseUI.pdb
