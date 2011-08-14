@@ -8,7 +8,7 @@
     <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="08/13/2011 10:01:17" />
     <file relUrl="bin/EntityFramework.xml" publishTime="08/13/2011 10:01:19" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="08/13/2011 10:01:18" />
-    <file relUrl="bin/auctionbaseUI.pdb" publishTime="08/14/2011 09:43:25" />
+    <file relUrl="bin/auctionbaseUI.pdb" publishTime="08/14/2011 13:32:55" />
     <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="08/13/2011 10:01:18" />
     <file relUrl="Web.config" publishTime="08/14/2011 10:36:44" />
     <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="08/13/2011 10:01:17" />
@@ -31,10 +31,11 @@
     <file relUrl="Scripts/modernizr-1.7.min.js" publishTime="08/13/2011 10:01:19" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="08/13/2011 10:01:17" />
     <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="08/13/2011 10:01:18" />
-    <file relUrl="bin/auctionbaseUI.dll" publishTime="08/14/2011 09:43:26" />
+    <file relUrl="bin/auctionbaseUI.dll" publishTime="08/14/2011 13:32:55" />
     <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="08/13/2011 10:01:18" />
     <file relUrl="Views/Home/Index.cshtml" publishTime="08/14/2011 09:43:24" />
     <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="08/13/2011 10:01:18" />
+    <file relUrl="Views/Html/Index.cshtml" publishTime="08/14/2011 13:29:01" />
     <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="08/13/2011 10:01:17" />
     <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="08/13/2011 10:01:18" />
     <file relUrl="packages.config" publishTime="08/13/2011 10:29:54" />
@@ -46,6 +47,7 @@
     <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="08/13/2011 10:01:17" />
     <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="08/13/2011 10:01:18" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="08/13/2011 10:01:18" />
+    <file relUrl="Views/Home/WebForm1.aspx" publishTime="08/14/2011 12:26:10" />
     <file relUrl="Scripts/jquery-1.5.1.min.js" publishTime="08/13/2011 10:01:18" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="08/13/2011 10:01:19" />
     <file relUrl="Views/Web.config" publishTime="08/14/2011 10:35:59" />

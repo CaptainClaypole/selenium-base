@@ -12,6 +12,21 @@ namespace auctionbaseUI.Models {
             get { return seleniumScrapeEntities.Current.tblVehicles; }
         }
 
+        public IQueryable<tblHtml> Htmls
+        {
+            get { return seleniumScrapeEntities.Current.tblHtmls; }
+        }
+
+        public IQueryable<tblSearchSession> SearchSessions
+        {
+            get { return seleniumScrapeEntities.Current.tblSearchSessions; }
+        }
+
+        public IQueryable<int> ReturnSearchSessionsID
+        {
+           
+        }
+
         public void Add<T>(T item) {
             seleniumScrapeEntities.Current.AddObject(GetSetName<T>(), item);
         }
