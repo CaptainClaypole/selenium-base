@@ -1,0 +1,27 @@
+﻿IEnumerable<auctionbaseUI.Models.tblHtml>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>DayVans</title>
+</head>
+<body>
+    <div>
+    LATEST DAY VANS (LATEST SEARCH SESSION == SESSION @ViewBag.Astro)
+        <br />
+   @foreach (var item in Model) {
+      
+             
+   @Html.Raw(item.html_data)
+                    
+       }
+       
+
+    </div>
+</body>
+</html>

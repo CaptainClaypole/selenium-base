@@ -22,10 +22,12 @@ namespace auctionbaseUI.Models {
             get { return seleniumScrapeEntities.Current.tblSearchSessions; }
         }
 
-        public IQueryable<int> ReturnSearchSessionsID
+        public IQueryable<tblVehicleTypeGeneral> GeneralTypes
         {
-           
+            get { return seleniumScrapeEntities.Current.tblVehicleTypeGenerals; }
         }
+
+       
 
         public void Add<T>(T item) {
             seleniumScrapeEntities.Current.AddObject(GetSetName<T>(), item);

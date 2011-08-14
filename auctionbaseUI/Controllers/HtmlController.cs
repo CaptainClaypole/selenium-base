@@ -9,7 +9,7 @@ namespace auctionbaseUI.Controllers
 {
     public class HtmlController : Controller
     {
-        //
+        //C:\Users\jon.JMC\AuctionBase-UI\auctionbaseUI\Views\Home\Index.cshtml
         // GET: /Html/
 
         private IMyRepo _repo;
@@ -31,9 +31,9 @@ namespace auctionbaseUI.Controllers
             // return all the vehicles in the vehicles table.  Sort by vehicle make.
            
             // get the highest session count id for most recent.
-            var sessionQuery = ((from m in _repo.SearchSessions
-                                 orderby m.Search_Session_ID_PK descending )
-                                 select m.Search_Session_ID_PK).FirstOrDefault();
+            var sessionQuery = (from m in _repo.SearchSessions
+                                 orderby m.Search_Session_ID_PK descending
+                                     select m.Search_Session_ID_PK).FirstOrDefault();
             
 
             return _repo.Htmls.Where(a => a.Search_Session_ID_fk == sessionQuery)

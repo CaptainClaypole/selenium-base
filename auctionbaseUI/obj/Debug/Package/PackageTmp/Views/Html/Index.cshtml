@@ -13,17 +13,12 @@
 <body>
     <div>
 
-      @foreach (var item in Model) {
-        <tr>
-            <td>
+   @foreach (var item in Model) {
+       
              
-              @Html.Raw(item.html_data)
+   @Html.Raw(item.html_data)
               
-        
-
-              
-            </td>
-        </tr>
+                
     }
         
     </div>
