@@ -62,6 +62,8 @@ namespace auctionbaseUI {
         internal class SiteModule : NinjectModule {
             public override void Load() {
                 Bind<ObjectContext>().To<seleniumScrapeEntities>().InRequestScope();
+                Bind<IMyRepo>().To<MyRepo>().InRequestScope();
+
                 //Bind<IMusicRepo>().To<MusicRepo>().InRequestScope();
                 //Bind<IShoppingCart>().To<ShoppingCart>().InRequestScope();
             }

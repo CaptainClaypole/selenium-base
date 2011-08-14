@@ -16,7 +16,7 @@ namespace auctionbaseUI.Controllers
         {
             _repo = repo;
         }
-
+      
         //
         // GET: /Home/
 
@@ -25,6 +25,12 @@ namespace auctionbaseUI.Controllers
             // Get all Vehicles
             var vehicles = GetAllVehicles();
 
+            //ViewBag.ListVehicles = vehicles;
+            //ViewBag.MyName = "Jonny Boy Clayton";
+            //ViewBag.DateTime = new DateTime(1980, 2, 1);
+
+
+            //return View(vehicles);
             return View(vehicles);
         }
 
