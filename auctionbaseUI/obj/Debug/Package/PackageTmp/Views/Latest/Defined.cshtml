@@ -1,6 +1,5 @@
-﻿@Model IEnumerable<auctionbaseUI.Models.tblHtml>
-
-@{
+﻿@model IEnumerable<auctionbaseUI.Models.tblHtml>
+  @{
     Layout = null;
 }
 
@@ -8,19 +7,21 @@
 
 <html>
 <head>
-    <title>All Camper Vans</title>
+    <title>Vehicles Matching Type ...</title>
 </head>
 <body>
     <div>
-            LATEST CAMPER VANS (LATEST SEARCH SESSION == SESSION @ViewBag.Astro)
+        
+          LATEST Vehicles (LATEST SEARCH SESSION == SESSION @ViewBag.Astro)
         <br />
    @foreach (var item in Model) {
-      
+      @ViewBag.Astro
              
    @Html.Raw(item.html_data)
                     
        }
        
+
 
     </div>
 </body>

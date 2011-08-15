@@ -40,6 +40,15 @@ namespace auctionbaseUI.Controllers
             return View(hiace);
         }
 
+        public ActionResult Vehicles(string model)
+        {
+            var vehicles = GetAllVehicles(model);
+            ViewBag.Data = GetModel(model);
+
+            return View(vehicles);
+
+        }
+
         public ActionResult Astro()
         {
             var astro = GetAllVehicles("CHEVROLET ASTRO");
@@ -71,6 +80,16 @@ namespace auctionbaseUI.Controllers
 
         }
 
+        public ActionResult Defined(string type)
+        {
+
+            var vehicles = GetAllDefinedTypeOfVehicles(type);
+
+           
+
+            return View(vehicles);
+        }
+
 
         private List<tblHtml> GetAllVehicles(string vehicleModel)
         {
@@ -86,6 +105,23 @@ namespace auctionbaseUI.Controllers
                 .OrderBy(s => s.html_id_pk)
                 .ToList();
 
+        }
+
+        private List<tblHtml> GetAllDefinedTypeOfVehicles(string definedType) {
+            int latestSession = GetLatestSearchSession();
+
+            // remove percentage 20s and replace with normal space.
+            definedType = RemoveSpacesFromParam(definedType);
+
+            var query = from d in _myRepo.DefinedTypes
+                        from v in d.tblVehicles
+                        from h in v.tblHtmls
+                        where d.VehicleTypeDefined == definedType && h.Search_Session_ID_fk == latestSession
+                        select h;
+
+            return query
+                .OrderBy(s => s.html_id_pk)
+                .ToList();
         }
 
         private List<tblHtml> GetAllTypeOfVehicles(string vehicleType)
@@ -126,6 +162,12 @@ namespace auctionbaseUI.Controllers
                                  .FirstOrDefault();
 
             return sessionQuery;
+        }
+
+        private string RemoveSpacesFromParam(string input)
+        {
+            string newInput = input.Replace("%20", " ");
+            return newInput;
         }
 
     }

@@ -27,6 +27,11 @@ namespace auctionbaseUI.Models {
             get { return seleniumScrapeEntities.Current.tblVehicleTypeGenerals; }
         }
 
+        public IQueryable<tblVehicleTypeDefined> DefinedTypes
+        {
+            get { return seleniumScrapeEntities.Current.tblVehicleTypeDefineds; }
+        }
+
        
 
         public void Add<T>(T item) {

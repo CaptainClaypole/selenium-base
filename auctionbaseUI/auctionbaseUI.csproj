@@ -84,6 +84,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblVehicleTypesDefined.cs" />
     <Compile Include="Models\IMyRepo.cs" />
     <Compile Include="Models\MyRepo.cs" />
     <Compile Include="Models\seleniumScrapeEntities.cs" />
@@ -182,6 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Latest\Campers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Latest\Defined.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Latest\Vehicles.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

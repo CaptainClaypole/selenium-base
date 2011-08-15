@@ -1,4 +1,4 @@
-﻿@Model IEnumerable<auctionbaseUI.Models.tblHtml>
+﻿@model IEnumerable<auctionbaseUI.Models.tblHtml>
 
 @{
     Layout = null;
@@ -8,20 +8,19 @@
 
 <html>
 <head>
-    <title>All Camper Vans</title>
+    <title>AuctionBase Vehicles</title>
 </head>
 <body>
     <div>
-            LATEST CAMPER VANS (LATEST SEARCH SESSION == SESSION @ViewBag.Astro)
+         LATEST Vehicles (LATEST SEARCH SESSION == SESSION @ViewBag.Data)
         <br />
    @foreach (var item in Model) {
-      
+      @ViewBag.Data
              
    @Html.Raw(item.html_data)
                     
        }
-       
-
+        
     </div>
 </body>
 </html>
