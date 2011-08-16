@@ -15,12 +15,13 @@
          LATEST Vehicles (LATEST SEARCH SESSION == SESSION @ViewBag.Data)
         <br />
    @foreach (var item in Model) {
-      @ViewBag.Data
-             
+   
+     <h1>@ViewBag.Data</h1> 
+ 
    @Html.Raw(item.html_data)
-                    
+                  
        }
         
     </div>
-</body>
+    </body>
 </html>

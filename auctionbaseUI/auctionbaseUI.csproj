@@ -84,6 +84,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HtmlVehicle.cs" />
     <Compile Include="Models\tblVehicleTypesDefined.cs" />
     <Compile Include="Models\IMyRepo.cs" />
     <Compile Include="Models\MyRepo.cs" />

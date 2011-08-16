@@ -83,8 +83,15 @@ namespace auctionbaseUI.Controllers
         public ActionResult Defined(string type)
         {
 
-            var vehicles = GetAllDefinedTypeOfVehicles(type);
+            //var vehicles = GetAllDefinedTypeOfVehicles(type);
+            var vehicles = GetAllDefinedTypeOfVehicles_WithModels(type);
 
+            ViewBag.Data = type;
+
+
+            
+                                                      
+            //ViewBag.Data = 
            
 
             return View(vehicles);
@@ -121,6 +128,33 @@ namespace auctionbaseUI.Controllers
 
             return query
                 .OrderBy(s => s.html_id_pk)
+                .ToList();
+        }
+
+        private List<HTMLVehicle> GetAllDefinedTypeOfVehicles_WithModels(string definedType) {
+            int latestSession = GetLatestSearchSession();
+
+            // remove percentage 20s and replace with normal space.
+            definedType = RemoveSpacesFromParam(definedType);
+
+            var query = from d in _myRepo.DefinedTypes
+                        from v in d.tblVehicles
+                        from h in v.tblHtmls
+                        where d.VehicleTypeDefined == definedType && h.Search_Session_ID_fk == latestSession
+                        select new HTMLVehicle(){
+                            htmlData = h.html_data,
+                            Vehicle_Model = v.Vehicle_Model,
+                            Vehicle_Make = v.Vehicle_Make,
+                            htmlDataID = h.html_id_pk
+                           
+                        };
+
+            
+
+                                  
+
+            return query
+                .OrderBy(s => s.htmlDataID)
                 .ToList();
         }
 
