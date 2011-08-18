@@ -1,0 +1,31 @@
+﻿@model IEnumerable<auctionbaseUI.Models.HTMLVehicle>
+  @{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Vehicles Matching Type ...</title>
+</head>
+<body>
+    <div>
+        
+          LATEST TOWNACE AND LITEACE (LATEST SEARCH SESSION == SESSION ) 
+        <br />
+   @foreach (var item in Model) {
+     
+      <h1>@ViewBag.Data</h1> 
+    
+   <h3>@item.Vehicle_Make  @item.Vehicle_Model  </h3>
+              
+   @Html.Raw(item.htmlData)
+                    
+       }
+       
+
+
+    </div>
+</body>
+</html>

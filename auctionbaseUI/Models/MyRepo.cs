@@ -32,6 +32,23 @@ namespace auctionbaseUI.Models {
             get { return seleniumScrapeEntities.Current.tblVehicleTypeDefineds; }
         }
 
+        public IQueryable<HTMLVehicle> GetLiteaceTownace
+        {
+            get { var db = seleniumScrapeEntities.Current;
+                var vehicles = from v in db.tblVehicles
+                               from h in v.tblHtmls
+                               where v.Vehicle_Model == "TOWN ACE TRUCK" || v.Vehicle_Model == "LITE ACE TRUCK"
+                               select new HTMLVehicle()
+                                          {
+                                              htmlData = h.html_data,
+                                              Vehicle_Make = v.Vehicle_Make,
+                                              Vehicle_Model = v.Vehicle_Model
+
+                                          };
+                return vehicles;
+            }
+        }
+
        
 
         public void Add<T>(T item) {

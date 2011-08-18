@@ -80,6 +80,16 @@ namespace auctionbaseUI.Controllers
 
         }
 
+        public ActionResult TownaceLiteace()
+        {
+
+            var vehicles = _myRepo.GetLiteaceTownace;
+
+            var vehiclesList = vehicles.ToList();
+            
+            return View(vehiclesList);
+        }
+
         public ActionResult Defined(string type)
         {
 
@@ -135,7 +145,7 @@ namespace auctionbaseUI.Controllers
             int latestSession = GetLatestSearchSession();
 
             // remove percentage 20s and replace with normal space.
-            definedType = RemoveSpacesFromParam(definedType);
+            //definedType = RemoveSpacesFromParam(definedType);
 
             var query = from d in _myRepo.DefinedTypes
                         from v in d.tblVehicles

@@ -9,7 +9,7 @@
     <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="08/16/2011 18:30:40" />
     <file relUrl="bin/EntityFramework.xml" publishTime="08/16/2011 18:30:42" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="08/16/2011 18:30:40" />
-    <file relUrl="bin/auctionbaseUI.pdb" publishTime="08/16/2011 20:06:20" />
+    <file relUrl="bin/auctionbaseUI.pdb" publishTime="08/17/2011 14:04:27" />
     <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Web.config" publishTime="08/16/2011 18:30:42" />
     <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="08/16/2011 18:30:40" />
@@ -32,9 +32,10 @@
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Content/themes/base/jquery.ui.all.css" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="08/16/2011 18:30:40" />
-    <file relUrl="bin/auctionbaseUI.dll" publishTime="08/16/2011 20:06:20" />
+    <file relUrl="bin/auctionbaseUI.dll" publishTime="08/17/2011 14:04:27" />
+    <file relUrl="Views/Latest/TownaceLiteace.cshtml" publishTime="08/17/2011 15:16:54" />
     <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="08/16/2011 18:30:40" />
-    <file relUrl="Views/Home/Index.cshtml" publishTime="08/16/2011 18:30:41" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="08/16/2011 21:40:17" />
     <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="08/16/2011 18:30:40" />
@@ -49,7 +50,6 @@
     <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="08/16/2011 18:30:41" />
-    <file relUrl="Views/Home/WebForm1.aspx" publishTime="08/16/2011 18:30:41" />
     <file relUrl="bin/WebActivator.dll" publishTime="08/16/2011 18:30:43" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="08/16/2011 18:30:41" />
     <file relUrl="Views/Latest/DayVans.cshtml" publishTime="08/16/2011 18:30:41" />
@@ -63,7 +63,7 @@
     <file relUrl="Scripts/modernizr-1.7.js" publishTime="08/16/2011 18:30:41" />
     <file relUrl="Views/Latest/Vehicles.cshtml" publishTime="08/16/2011 20:06:18" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="08/16/2011 18:30:41" />
-    <file relUrl="Views/Latest/Defined.cshtml" publishTime="08/16/2011 20:16:05" />
+    <file relUrl="Views/Latest/Defined.cshtml" publishTime="08/16/2011 20:26:54" />
     <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="08/16/2011 18:30:40" />
     <file relUrl="Scripts/jquery-1.5.1-vsdoc.js" publishTime="08/16/2011 18:30:40" />
     <file relUrl="bin/Ninject.pdb" publishTime="08/16/2011 18:30:43" />
