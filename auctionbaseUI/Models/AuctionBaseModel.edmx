@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="seleniumScrapeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="seleniumScrapeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="seleniumScrapeModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="seleniumScrapeModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblHtml" EntityType="seleniumScrapeModel.Store.tblHtml" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblHtmlLink" EntityType="seleniumScrapeModel.Store.tblHtmlLink" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblPage" EntityType="seleniumScrapeModel.Store.tblPage" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblSearchSession" EntityType="seleniumScrapeModel.Store.tblSearchSession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUserLogin" EntityType="seleniumScrapeModel.Store.tblUserLogin" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicle" EntityType="seleniumScrapeModel.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleTypeCountry" EntityType="seleniumScrapeModel.Store.tblVehicleTypeCountry" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleTypeDefined" EntityType="seleniumScrapeModel.Store.tblVehicleTypeDefined" store:Type="Tables" Schema="dbo" />
@@ -86,6 +87,15 @@
           </Key>
           <Property Name="Search_Session_ID_PK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
+        <EntityType Name="tblUserLogin">
+          <Key>
+            <PropertyRef Name="tblUserLoginID" />
+          </Key>
+          <Property Name="tblUserLoginID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tblUserLoginName" Type="varchar" MaxLength="50" />
+          <Property Name="tblUserLoginPassword" Type="char" MaxLength="10" />
+          <Property Name="tblUserLoginEmail" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblVehicle">
           <Key>
             <PropertyRef Name="Vehicle_ID_Pk" />
@@ -97,6 +107,7 @@
           <Property Name="Vehicle_Model" Type="varchar" MaxLength="50" />
           <Property Name="Vehicle_Type_ID_fk" Type="int" />
           <Property Name="Vehicle_WillBeSearched" Type="bit" />
+          <Property Name="Vehicle_CondtionFilter" Type="bit" />
         </EntityType>
         <EntityType Name="tblVehicleTypeCountry">
           <Key>
@@ -203,18 +214,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <!--Errors Found During Generation:
       warning 6013: The table/view 'seleniumScrape.dbo.vw_vehicle_main' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="vw_vehicle_main">
         <Property Name="Vehicle_Make" Type="varchar" MaxLength="50" />
         <Property Name="Vehicle_Model" Type="varchar" MaxLength="50" />
-        <Property Name="Vehicle_Type" Type="varchar" MaxLength="50" />
+        <Property Name="Vehicle_Type_Country" Type="varchar" MaxLength="50" />
         <Property Name="VehicleTypeGeneral" Type="varchar" MaxLength="50" />
         <Property Name="VehicleTypeDefined" Type="varchar" MaxLength="50" />
       </EntityType>-->
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="seleniumScrapeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -256,6 +297,7 @@
             <End Role="tblVehicleTypeGeneral" EntitySet="tblVehicleTypeGenerals" />
             <End Role="tblVehicle" EntitySet="tblVehicles" />
           </AssociationSet>
+          <EntitySet Name="tblUserLogins" EntityType="seleniumScrapeModel.tblUserLogin" />
         </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -321,6 +363,7 @@
           <NavigationProperty Name="tblVehicleTypeCountry" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleType" FromRole="tblVehicle" ToRole="tblVehicleTypeCountry" />
           <NavigationProperty Name="tblVehicleTypeDefined" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeDefined" FromRole="tblVehicle" ToRole="tblVehicleTypeDefined" />
           <NavigationProperty Name="tblVehicleTypeGeneral" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeGeneral" FromRole="tblVehicle" ToRole="tblVehicleTypeGeneral" />
+          <Property Type="Boolean" Name="Vehicle_CondtionFilter" />
         </EntityType>
         <EntityType Name="tblVehicleTypeCountry">
           <Key>
@@ -430,6 +473,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblUserLogin">
+          <Key>
+            <PropertyRef Name="tblUserLoginID" />
+          </Key>
+          <Property Type="Int32" Name="tblUserLoginID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tblUserLoginName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tblUserLoginPassword" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="tblUserLoginEmail" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -464,7 +516,8 @@
             <ScalarProperty Name="Search_Session_ID_PK" ColumnName="Search_Session_ID_PK" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tblVehicles"><EntityTypeMapping TypeName="seleniumScrapeModel.tblVehicle"><MappingFragment StoreEntitySet="tblVehicle">
-            <ScalarProperty Name="Vehicle_Type_General_id_fk" ColumnName="Vehicle_Type_General_id_fk" />
+            <ScalarProperty Name="Vehicle_CondtionFilter" ColumnName="Vehicle_CondtionFilter" />
+                <ScalarProperty Name="Vehicle_Type_General_id_fk" ColumnName="Vehicle_Type_General_id_fk" />
             <ScalarProperty Name="Vehicle_Type_Defined_fk" ColumnName="Vehicle_Type_Defined_fk" />
             <ScalarProperty Name="Vehicle_ID_Pk" ColumnName="Vehicle_ID_Pk" />
             <ScalarProperty Name="Vehicle_Make" ColumnName="Vehicle_Make" />
@@ -484,6 +537,16 @@
             <ScalarProperty Name="VehicleTypeGeneral_pk" ColumnName="VehicleTypeGeneral_pk" />
             <ScalarProperty Name="VehicleTypeGeneral" ColumnName="VehicleTypeGeneral" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tblUserLogins">
+            <EntityTypeMapping TypeName="seleniumScrapeModel.tblUserLogin">
+              <MappingFragment StoreEntitySet="tblUserLogin">
+                <ScalarProperty Name="tblUserLoginEmail" ColumnName="tblUserLoginEmail" />
+                <ScalarProperty Name="tblUserLoginPassword" ColumnName="tblUserLoginPassword" />
+                <ScalarProperty Name="tblUserLoginName" ColumnName="tblUserLoginName" />
+                <ScalarProperty Name="tblUserLoginID" ColumnName="tblUserLoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -515,40 +578,41 @@
         <EntityTypeShape EntityType="seleniumScrapeModel.tblVehicleTypeDefined" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="seleniumScrapeModel.tblVehicleTypeGeneral" Width="1.5" PointX="0.75" PointY="7.125" Height="1.5956835937499996" IsExpanded="true" />
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtml_tblSearchSession" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="9.001078524739583" />
-          <ConnectorPoint PointX="4.875" PointY="8.626078524739583" />
-          <ConnectorPoint PointX="4.875" PointY="4.7785953776041667" />
-          <ConnectorPoint PointX="5.25" PointY="4.7785953776041667" />
+          <ConnectorPoint PointX="4.5" PointY="9.00098068067764" />
+          <ConnectorPoint PointX="4.875" PointY="8.62598068067764" />
+          <ConnectorPoint PointX="4.875" PointY="4.9967281608044054" />
+          <ConnectorPoint PointX="5.25" PointY="4.9967281608044054" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtml_tblVehicle1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.0767976888020838" />
-          <ConnectorPoint PointX="5.25" PointY="4.0767976888020838" />
+          <ConnectorPoint PointX="4.5" PointY="4.1858640804022027" />
+          <ConnectorPoint PointX="5.25" PointY="4.1858640804022027" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtmlLink_tblHtml" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="4.7689925130208328" />
           <ConnectorPoint PointX="7.5" PointY="4.7689925130208328" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblPage_tblVehicle" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="6.326396484375" />
-          <ConnectorPoint PointX="3.75" PointY="8.0189925130208337" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="8.0189925130208337" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="8.0189925130208337" />
-          <ConnectorPoint PointX="5.25" PointY="8.0189925130208337" />
+          <ConnectorPoint PointX="3.9726553125" PointY="6.11166661898295" />
+          <ConnectorPoint PointX="3.9726553125" PointY="8.1870675528794514" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="8.1870675528794514" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="8.1870675528794514" />
+          <ConnectorPoint PointX="5.25" PointY="8.1870675528794514" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblVehicle_tblVehicleType" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="4.672841796875" />
-          <ConnectorPoint PointX="3" PointY="4.672841796875" />
+          <ConnectorPoint PointX="2.25" PointY="4.5965234285593031" />
+          <ConnectorPoint PointX="3" PointY="4.5965234285593031" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeDefined" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="1.5478417968749998" />
-          <ConnectorPoint PointX="3.75" PointY="1.5478417968749998" />
+          <ConnectorPoint PointX="2.25" PointY="1.4715234285593035" />
+          <ConnectorPoint PointX="3.75" PointY="1.4715234285593035" />
           <ConnectorPoint PointX="3.75" PointY="3" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeGeneral" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.5719962565104169" />
-          <ConnectorPoint PointX="3.3437475" PointY="7.5719962565104169" />
-          <ConnectorPoint PointX="3.3437475" PointY="6.326396484375" />
+          <ConnectorPoint PointX="2.25" PointY="7.6560337764397257" />
+          <ConnectorPoint PointX="3.4550751562500004" PointY="7.6560337764397257" />
+          <ConnectorPoint PointX="3.4550751562500004" PointY="6.11166661898295" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="seleniumScrapeModel.tblUserLogin" Width="1.5" PointX="5.375" PointY="0.75" Height="1.6099088333050418" />
       </Diagram>
     </Diagrams>
   </Designer>

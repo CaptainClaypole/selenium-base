@@ -219,6 +219,22 @@ namespace auctionbaseUI.Models
             }
         }
         private ObjectSet<tblVehicleTypeGeneral> _tblVehicleTypeGenerals;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tblUserLogin> tblUserLogins
+        {
+            get
+            {
+                if ((_tblUserLogins == null))
+                {
+                    _tblUserLogins = base.CreateObjectSet<tblUserLogin>("tblUserLogins");
+                }
+                return _tblUserLogins;
+            }
+        }
+        private ObjectSet<tblUserLogin> _tblUserLogins;
 
         #endregion
         #region AddTo Methods
@@ -293,6 +309,14 @@ namespace auctionbaseUI.Models
         public void AddTotblVehicleTypeGenerals(tblVehicleTypeGeneral tblVehicleTypeGeneral)
         {
             base.AddObject("tblVehicleTypeGenerals", tblVehicleTypeGeneral);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tblUserLogins EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotblUserLogins(tblUserLogin tblUserLogin)
+        {
+            base.AddObject("tblUserLogins", tblUserLogin);
         }
 
         #endregion
@@ -1081,6 +1105,133 @@ namespace auctionbaseUI.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="seleniumScrapeModel", Name="tblUserLogin")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tblUserLogin : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tblUserLogin object.
+        /// </summary>
+        /// <param name="tblUserLoginID">Initial value of the tblUserLoginID property.</param>
+        public static tblUserLogin CreatetblUserLogin(global::System.Int32 tblUserLoginID)
+        {
+            tblUserLogin tblUserLogin = new tblUserLogin();
+            tblUserLogin.tblUserLoginID = tblUserLoginID;
+            return tblUserLogin;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 tblUserLoginID
+        {
+            get
+            {
+                return _tblUserLoginID;
+            }
+            set
+            {
+                if (_tblUserLoginID != value)
+                {
+                    OntblUserLoginIDChanging(value);
+                    ReportPropertyChanging("tblUserLoginID");
+                    _tblUserLoginID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("tblUserLoginID");
+                    OntblUserLoginIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _tblUserLoginID;
+        partial void OntblUserLoginIDChanging(global::System.Int32 value);
+        partial void OntblUserLoginIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tblUserLoginName
+        {
+            get
+            {
+                return _tblUserLoginName;
+            }
+            set
+            {
+                OntblUserLoginNameChanging(value);
+                ReportPropertyChanging("tblUserLoginName");
+                _tblUserLoginName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tblUserLoginName");
+                OntblUserLoginNameChanged();
+            }
+        }
+        private global::System.String _tblUserLoginName;
+        partial void OntblUserLoginNameChanging(global::System.String value);
+        partial void OntblUserLoginNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tblUserLoginPassword
+        {
+            get
+            {
+                return _tblUserLoginPassword;
+            }
+            set
+            {
+                OntblUserLoginPasswordChanging(value);
+                ReportPropertyChanging("tblUserLoginPassword");
+                _tblUserLoginPassword = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tblUserLoginPassword");
+                OntblUserLoginPasswordChanged();
+            }
+        }
+        private global::System.String _tblUserLoginPassword;
+        partial void OntblUserLoginPasswordChanging(global::System.String value);
+        partial void OntblUserLoginPasswordChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tblUserLoginEmail
+        {
+            get
+            {
+                return _tblUserLoginEmail;
+            }
+            set
+            {
+                OntblUserLoginEmailChanging(value);
+                ReportPropertyChanging("tblUserLoginEmail");
+                _tblUserLoginEmail = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tblUserLoginEmail");
+                OntblUserLoginEmailChanged();
+            }
+        }
+        private global::System.String _tblUserLoginEmail;
+        partial void OntblUserLoginEmailChanging(global::System.String value);
+        partial void OntblUserLoginEmailChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="seleniumScrapeModel", Name="tblVehicle")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -1272,6 +1423,30 @@ namespace auctionbaseUI.Models
         private Nullable<global::System.Boolean> _Vehicle_WillBeSearched;
         partial void OnVehicle_WillBeSearchedChanging(Nullable<global::System.Boolean> value);
         partial void OnVehicle_WillBeSearchedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> Vehicle_CondtionFilter
+        {
+            get
+            {
+                return _Vehicle_CondtionFilter;
+            }
+            set
+            {
+                OnVehicle_CondtionFilterChanging(value);
+                ReportPropertyChanging("Vehicle_CondtionFilter");
+                _Vehicle_CondtionFilter = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Vehicle_CondtionFilter");
+                OnVehicle_CondtionFilterChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _Vehicle_CondtionFilter;
+        partial void OnVehicle_CondtionFilterChanging(Nullable<global::System.Boolean> value);
+        partial void OnVehicle_CondtionFilterChanged();
 
         #endregion
     

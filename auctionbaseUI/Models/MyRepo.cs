@@ -34,10 +34,20 @@ namespace auctionbaseUI.Models {
 
         public IQueryable<HTMLVehicle> GetLiteaceTownace
         {
-            get { var db = seleniumScrapeEntities.Current;
+            get {
+                
+                var db = seleniumScrapeEntities.Current;
+
+                // Get latest search session ID.
+                var sessionLatest = (from m in db.tblSearchSessions
+                                     orderby m.Search_Session_ID_PK descending
+                                     select m.Search_Session_ID_PK)
+                                     .FirstOrDefault();
+
+
                 var vehicles = from v in db.tblVehicles
                                from h in v.tblHtmls
-                               where v.Vehicle_Model == "TOWN ACE TRUCK" || v.Vehicle_Model == "LITE ACE TRUCK"
+                               where v.Vehicle_Model == "TOWN ACE TRUCK" && h.Search_Session_ID_fk == sessionLatest || v.Vehicle_Model == "LITE ACE TRUCK" && h.Search_Session_ID_fk == sessionLatest
                                select new HTMLVehicle()
                                           {
                                               htmlData = h.html_data,

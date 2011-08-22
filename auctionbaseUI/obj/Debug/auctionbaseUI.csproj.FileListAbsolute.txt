@@ -26,3 +26,17 @@ C:\Users\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.Web.Mvc.xml
 C:\Users\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\auctionbaseUI.dll
 C:\Users\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\auctionbaseUI.pdb
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\auctionbaseUI.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\auctionbaseUI.pdb
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\EntityFramework.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.Web.Mvc.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\WebActivator.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\EntityFramework.xml
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.pdb
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.xml
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.Web.Mvc.pdb
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\bin\Ninject.Web.Mvc.xml
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\auctionbaseUI.dll
+F:\Documents and Settings\jon.JMC\selenium-base\auctionbaseUI\obj\Debug\auctionbaseUI.pdb
