@@ -20,11 +20,12 @@
         </tr>
     
     @foreach (var item in Model) {
+      
         <tr>
             <td>
                
                 @item.Vehicle_Make
-                @item.Vehicle_Model 
+               @Html.ActionLink(item.Vehicle_Model, "Models", "MainNav", new { model = item.Vehicle_Model },null)
             </td>
         </tr>
     }

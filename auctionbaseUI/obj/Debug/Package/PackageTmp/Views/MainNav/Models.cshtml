@@ -1,0 +1,32 @@
+﻿@model IEnumerable<auctionbaseUI.Models.tblHtml>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Chevrolet Astro</title>
+</head>
+<body>
+    <div>
+     
+        Please e-mail sales@supercamper.co.uk with the Model type and the LOT NUMBER of 
+        any vehicles that you would like us to get more information about.  We will then get an auction report translation for you.
+
+        <br />
+   @foreach (var item in Model) {
+      
+             
+   @Html.Raw(item.html_data)
+                    
+       }
+       
+
+
+
+    </div>
+</body>
+</html>

@@ -33,6 +33,10 @@ namespace auctionbaseUI.Controllers
             //return View(vehicles);
             return View(vehicles);
         }
+        [Authorize]
+        public ActionResult Welcome() {
+            return View();
+        }
 
         private List<tblVehicle> GetAllVehicles()
         {

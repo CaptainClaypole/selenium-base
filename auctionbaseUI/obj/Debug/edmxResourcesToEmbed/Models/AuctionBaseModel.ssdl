@@ -6,6 +6,7 @@
     <EntitySet Name="tblHtmlLink" EntityType="seleniumScrapeModel.Store.tblHtmlLink" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblPage" EntityType="seleniumScrapeModel.Store.tblPage" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblSearchSession" EntityType="seleniumScrapeModel.Store.tblSearchSession" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblUserLogin" EntityType="seleniumScrapeModel.Store.tblUserLogin" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblVehicle" EntityType="seleniumScrapeModel.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblVehicleTypeCountry" EntityType="seleniumScrapeModel.Store.tblVehicleTypeCountry" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblVehicleTypeDefined" EntityType="seleniumScrapeModel.Store.tblVehicleTypeDefined" store:Type="Tables" Schema="dbo" />
@@ -81,6 +82,15 @@
     </Key>
     <Property Name="Search_Session_ID_PK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
+  <EntityType Name="tblUserLogin">
+    <Key>
+      <PropertyRef Name="tblUserLoginID" />
+    </Key>
+    <Property Name="tblUserLoginID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tblUserLoginName" Type="varchar" MaxLength="50" />
+    <Property Name="tblUserLoginPassword" Type="char" MaxLength="10" />
+    <Property Name="tblUserLoginEmail" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="tblVehicle">
     <Key>
       <PropertyRef Name="Vehicle_ID_Pk" />
@@ -92,6 +102,7 @@
     <Property Name="Vehicle_Model" Type="varchar" MaxLength="50" />
     <Property Name="Vehicle_Type_ID_fk" Type="int" />
     <Property Name="Vehicle_WillBeSearched" Type="bit" />
+    <Property Name="Vehicle_CondtionFilter" Type="bit" />
   </EntityType>
   <EntityType Name="tblVehicleTypeCountry">
     <Key>
@@ -198,14 +209,35 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-      warning 6013: The table/view 'seleniumScrape.dbo.vw_vehicle_main' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="vw_vehicle_main">
-        <Property Name="Vehicle_Make" Type="varchar" MaxLength="50" />
-        <Property Name="Vehicle_Model" Type="varchar" MaxLength="50" />
-        <Property Name="Vehicle_Type" Type="varchar" MaxLength="50" />
-        <Property Name="VehicleTypeGeneral" Type="varchar" MaxLength="50" />
-        <Property Name="VehicleTypeDefined" Type="varchar" MaxLength="50" />
-      </EntityType>-->
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
 </Schema>

@@ -51,6 +51,7 @@
     <EntitySetMapping Name="tblVehicles">
       <EntityTypeMapping TypeName="seleniumScrapeModel.tblVehicle">
         <MappingFragment StoreEntitySet="tblVehicle">
+          <ScalarProperty Name="Vehicle_CondtionFilter" ColumnName="Vehicle_CondtionFilter" />
           <ScalarProperty Name="Vehicle_Type_General_id_fk" ColumnName="Vehicle_Type_General_id_fk" />
           <ScalarProperty Name="Vehicle_Type_Defined_fk" ColumnName="Vehicle_Type_Defined_fk" />
           <ScalarProperty Name="Vehicle_ID_Pk" ColumnName="Vehicle_ID_Pk" />
@@ -82,6 +83,16 @@
         <MappingFragment StoreEntitySet="tblVehicleTypeGeneral">
           <ScalarProperty Name="VehicleTypeGeneral_pk" ColumnName="VehicleTypeGeneral_pk" />
           <ScalarProperty Name="VehicleTypeGeneral" ColumnName="VehicleTypeGeneral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLogins">
+      <EntityTypeMapping TypeName="seleniumScrapeModel.tblUserLogin">
+        <MappingFragment StoreEntitySet="tblUserLogin">
+          <ScalarProperty Name="tblUserLoginEmail" ColumnName="tblUserLoginEmail" />
+          <ScalarProperty Name="tblUserLoginPassword" ColumnName="tblUserLoginPassword" />
+          <ScalarProperty Name="tblUserLoginName" ColumnName="tblUserLoginName" />
+          <ScalarProperty Name="tblUserLoginID" ColumnName="tblUserLoginID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

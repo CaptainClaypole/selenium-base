@@ -38,6 +38,7 @@
       <End Role="tblVehicleTypeGeneral" EntitySet="tblVehicleTypeGenerals" />
       <End Role="tblVehicle" EntitySet="tblVehicles" />
     </AssociationSet>
+    <EntitySet Name="tblUserLogins" EntityType="seleniumScrapeModel.tblUserLogin" />
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -103,6 +104,7 @@
     <NavigationProperty Name="tblVehicleTypeCountry" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleType" FromRole="tblVehicle" ToRole="tblVehicleTypeCountry" />
     <NavigationProperty Name="tblVehicleTypeDefined" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeDefined" FromRole="tblVehicle" ToRole="tblVehicleTypeDefined" />
     <NavigationProperty Name="tblVehicleTypeGeneral" Relationship="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeGeneral" FromRole="tblVehicle" ToRole="tblVehicleTypeGeneral" />
+    <Property Type="Boolean" Name="Vehicle_CondtionFilter" />
   </EntityType>
   <EntityType Name="tblVehicleTypeCountry">
     <Key>
@@ -212,4 +214,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="tblUserLogin">
+    <Key>
+      <PropertyRef Name="tblUserLoginID" />
+    </Key>
+    <Property Type="Int32" Name="tblUserLoginID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="tblUserLoginName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tblUserLoginPassword" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tblUserLoginEmail" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

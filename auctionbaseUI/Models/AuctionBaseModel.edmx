@@ -245,16 +245,6 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'seleniumScrape.dbo.vw_vehicle_main' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="vw_vehicle_main">
-        <Property Name="Vehicle_Make" Type="varchar" MaxLength="50" />
-        <Property Name="Vehicle_Model" Type="varchar" MaxLength="50" />
-        <Property Name="Vehicle_Type_Country" Type="varchar" MaxLength="50" />
-        <Property Name="VehicleTypeGeneral" Type="varchar" MaxLength="50" />
-        <Property Name="VehicleTypeDefined" Type="varchar" MaxLength="50" />
-      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>

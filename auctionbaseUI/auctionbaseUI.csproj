@@ -73,8 +73,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HtmlController.cs" />
     <Compile Include="Controllers\LatestController.cs" />
+    <Compile Include="Controllers\MainNavController.cs" />
     <Compile Include="Models\AuctionBaseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,8 +86,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Authentication\UserLoginViewModel.cs" />
+    <Compile Include="Models\Authentication\UserManager.cs" />
     <Compile Include="Models\HtmlVehicle.cs" />
-    <Compile Include="Models\Authentication\tblUserLogin.cs" />
     <Compile Include="Models\tblVehicleTypesDefined.cs" />
     <Compile Include="Models\IMyRepo.cs" />
     <Compile Include="Models\MyRepo.cs" />
@@ -193,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Latest\TownaceLiteace.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\SignUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MainNav\Models.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

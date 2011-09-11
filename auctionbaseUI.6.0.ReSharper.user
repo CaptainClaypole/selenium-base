@@ -1,0 +1,33 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:AccountController.cs" caret="245" fromTop="1" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="998" fromTop="42" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:tblVehicle.cs" caret="0" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Account/f:SignUp.cshtml" caret="0" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/d:Authentication/f:UserManager.cs" caret="201" fromTop="5" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/d:Authentication/f:UserLoginViewModel.cs" caret="428" fromTop="8" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/f:Global.asax.cs" caret="2052" fromTop="17" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:IMyRepo.cs" caret="20" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:MyRepo.cs" caret="2330" fromTop="11" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

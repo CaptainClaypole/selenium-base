@@ -1,0 +1,57 @@
+﻿@model auctionbaseUI.Models.UserLoginViewModel
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>UserLoginViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userId)
+            @Html.ValidationMessageFor(model => model.userId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
