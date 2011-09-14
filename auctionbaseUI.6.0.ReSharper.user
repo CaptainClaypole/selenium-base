@@ -8,17 +8,57 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:AccountController.cs" caret="245" fromTop="1" />
-      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="998" fromTop="42" />
-      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:tblVehicle.cs" caret="0" fromTop="0" />
       <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Account/f:SignUp.cshtml" caret="0" fromTop="0" />
       <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/d:Authentication/f:UserManager.cs" caret="201" fromTop="5" />
       <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/d:Authentication/f:UserLoginViewModel.cs" caret="428" fromTop="8" />
       <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/f:Global.asax.cs" caret="2052" fromTop="17" />
-      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:IMyRepo.cs" caret="20" fromTop="0" />
-      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:MyRepo.cs" caret="2330" fromTop="11" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:tblVehicle.cs" caret="186" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:AccountController.cs" caret="1012" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:WelcomeViewData.cs" caret="112" fromTop="5" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HtmlController.cs" caret="668" fromTop="23" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:LatestController.cs" caret="181" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="750" fromTop="0" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:IMyRepo.cs" caret="323" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:MyRepo.cs" caret="89" fromTop="4" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="1154" fromTop="6" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="505" fromTop="7" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:MainNav/f:definedSearch.cshtml" caret="433" fromTop="9" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Latest/f:Astro.cshtml" caret="438" fromTop="18" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:MainNav/f:Models.cshtml" caret="593" fromTop="18" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Latest/f:Defined.cshtml" caret="83" fromTop="4" />
     </RecentFiles>
-    <RecentEdits />
+    <RecentEdits>
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="576" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="753" fromTop="12" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="753" fromTop="16" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="378" fromTop="21" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="753" fromTop="12" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="852" fromTop="18" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="1208" fromTop="20" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="1173" fromTop="18" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="1143" fromTop="22" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="1201" fromTop="19" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="898" fromTop="18" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:WelcomeViewData.cs" caret="399" fromTop="12" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="1618" fromTop="14" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="1201" fromTop="9" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:HomeController.cs" caret="746" fromTop="2" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" caret="252" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="1789" fromTop="11" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="2095" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="3221" fromTop="11" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:MyRepo.cs" caret="484" fromTop="8" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:IMyRepo.cs" caret="495" fromTop="11" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="3168" fromTop="14" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Models/f:MyRepo.cs" caret="158" fromTop="6" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="3089" fromTop="11" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="3087" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="2992" fromTop="15" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="2509" fromTop="10" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="2883" fromTop="12" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="2685" fromTop="5" />
+      <File id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Controllers/f:MainNavController.cs" caret="3584" fromTop="54" />
+    </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
     <NAntPath value="" />
@@ -30,4 +70,127 @@
     <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\</NUnitInstallDir>
     <UseAddins>Never</UseAddins>
   </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="RazorTransitionCompletionContext">
+      <Item value="Html" priority="65" />
+      <Item value="HttpUtility`0" priority="7" />
+      <Item value="foreach" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="Html" priority="239" />
+      <Item value="ctx" priority="31" />
+      <Item value="item" priority="223" />
+      <Item value="Controller`0" priority="31" />
+      <Item value="new" priority="191" />
+      <Item value="HttpUtility`0" priority="29" />
+      <Item value="HtmlDecode`0" priority="3" />
+      <Item value="HTMLVehicle`0" priority="91" />
+      <Item value="tblHtml`0" priority="191" />
+      <Item value="public" priority="159" />
+      <Item value="ActionResult`0" priority="31" />
+      <Item value="string" priority="159" />
+      <Item value="var" priority="415" />
+      <Item value="return" priority="63" />
+      <Item value="View`0" priority="31" />
+      <Item value="List" priority="188" />
+      <Item value="WelcomeViewData" priority="28" />
+      <Item value="vehicleData" priority="159" />
+      <Item value="GetAllVehicles`0" priority="31" />
+      <Item value="tblVehicle`0" priority="31" />
+      <Item value="tblVehicleTypeDefined`0" priority="63" />
+      <Item value="WelcomeViewData`0" priority="26" />
+      <Item value="foreach" priority="215" />
+      <Item value="in" priority="159" />
+      <Item value="item2" priority="31" />
+      <Item value="definedSearch" priority="32" />
+      <Item value="Model" priority="287" />
+      <Item value="type" priority="31" />
+      <Item value="IEnumerable" priority="63" />
+      <Item value="from" priority="159" />
+      <Item value="vehicles" priority="63" />
+      <Item value="SelectListItem`0" priority="31" />
+      <Item value="select" priority="63" />
+      <Item value="SelectListItem" priority="28" />
+      <Item value="Text" priority="31" />
+      <Item value="v" priority="225" />
+      <Item value="Value" priority="32" />
+      <Item value="selectList" priority="31" />
+      <Item value="SelectList" priority="58" />
+      <Item value="model" priority="31" />
+      <Item value="DropDownListFor`2" priority="3" />
+      <Item value="h" priority="287" />
+      <Item value="hal" priority="95" />
+      <Item value="vehicleModel" priority="95" />
+      <Item value="where" priority="63" />
+      <Item value="tblHtmlRow`0" priority="63" />
+      <Item value="IQueryable" priority="159" />
+      <Item value="HtmlRows" priority="32" />
+      <Item value="hr" priority="63" />
+      <Item value="htmlRows" priority="159" />
+      <Item value="rta" priority="31" />
+      <Item value="r" priority="127" />
+      <Item value="htmlBatchList" priority="31" />
+      <Item value="htmlBatchId" priority="31" />
+      <Item value="query" priority="95" />
+      <Item value="htmlRow" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
+      <Item value="ActionLink`0" priority="27" />
+      <Item value="DropDownList`0" priority="53" />
+      <Item value="DropDownListFor`2" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.tblVehicle">
+      <Item value="Vehicle_Model" priority="191" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpUtility">
+      <Item value="HtmlDecode`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.WelcomeViewData">
+      <Item value="vehicleModels" priority="242" />
+      <Item value="vehicleDefinedTypes" priority="134" />
+      <Item value="selectList" priority="188" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.IMyRepo">
+      <Item value="DefinedTypes" priority="26" />
+      <Item value="Htmls" priority="26" />
+      <Item value="HtmlRows" priority="26" />
+      <Item value="Html" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.tblVehicleTypeDefined">
+      <Item value="VehicleTypeDefined" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="HtmlCodeCompletionContext">
+      <Item value="table" priority="5" />
+      <Item value="tr" priority="11" />
+      <Item value="td" priority="5" />
+      <Item value="b" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.SelectListItem">
+      <Item value="Text" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.tblHtml">
+      <Item value="html_id_pk" priority="26" />
+      <Item value="tblHtmlRows" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
+      <Item value="ToList`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.seleniumScrapeEntities">
+      <Item value="tblHtmlRows" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:auctionbaseUI.Models.tblHtmlRow">
+      <Item value="tblHtml" priority="80" />
+      <Item value="html_data_id_fk" priority="26" />
+      <Item value="html_row_data" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToList`1" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <Bookmarks>
+    <Bookmark owner="NumberedBookmarkManager" id="Bookmark0" file-id="64CBB4C4-9A82-4E25-A41D-A610CF8BB05F/d:Views/d:Home/f:Index.cshtml" coords="(Doc Ln 15 Col 38)" />
+  </Bookmarks>
 </Configuration>

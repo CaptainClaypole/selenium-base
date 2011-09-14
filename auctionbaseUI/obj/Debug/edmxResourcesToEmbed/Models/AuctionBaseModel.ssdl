@@ -4,6 +4,7 @@
     <EntitySet Name="sysdiagrams" EntityType="seleniumScrapeModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblHtml" EntityType="seleniumScrapeModel.Store.tblHtml" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblHtmlLink" EntityType="seleniumScrapeModel.Store.tblHtmlLink" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblHtmlRow" EntityType="seleniumScrapeModel.Store.tblHtmlRow" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblPage" EntityType="seleniumScrapeModel.Store.tblPage" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblSearchSession" EntityType="seleniumScrapeModel.Store.tblSearchSession" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblUserLogin" EntityType="seleniumScrapeModel.Store.tblUserLogin" store:Type="Tables" Schema="dbo" />
@@ -22,6 +23,10 @@
     <AssociationSet Name="FK_tblHtmlLink_tblHtml" Association="seleniumScrapeModel.Store.FK_tblHtmlLink_tblHtml">
       <End Role="tblHtml" EntitySet="tblHtml" />
       <End Role="tblHtmlLink" EntitySet="tblHtmlLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHtmlRow_tblHtml" Association="seleniumScrapeModel.Store.FK_tblHtmlRow_tblHtml">
+      <End Role="tblHtml" EntitySet="tblHtml" />
+      <End Role="tblHtmlRow" EntitySet="tblHtmlRow" />
     </AssociationSet>
     <AssociationSet Name="FK_tblPage_tblVehicle" Association="seleniumScrapeModel.Store.FK_tblPage_tblVehicle">
       <End Role="tblVehicle" EntitySet="tblVehicle" />
@@ -67,6 +72,15 @@
     <Property Name="html_Link_ID_PK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="html_data_ID_fk" Type="int" />
     <Property Name="html_link_order_position_number" Type="int" />
+  </EntityType>
+  <EntityType Name="tblHtmlRow">
+    <Key>
+      <PropertyRef Name="html_row_id_PK" />
+    </Key>
+    <Property Name="html_row_id_PK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="html_row_data" Type="varchar(max)" />
+    <Property Name="html_data_id_fk" Type="int" />
+    <Property Name="html_row_number" Type="char" MaxLength="10" />
   </EntityType>
   <EntityType Name="tblPage">
     <Key>
@@ -158,6 +172,18 @@
       </Principal>
       <Dependent Role="tblHtmlLink">
         <PropertyRef Name="html_data_ID_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHtmlRow_tblHtml">
+    <End Role="tblHtml" Type="seleniumScrapeModel.Store.tblHtml" Multiplicity="0..1" />
+    <End Role="tblHtmlRow" Type="seleniumScrapeModel.Store.tblHtmlRow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHtml">
+        <PropertyRef Name="html_id_pk" />
+      </Principal>
+      <Dependent Role="tblHtmlRow">
+        <PropertyRef Name="html_data_id_fk" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

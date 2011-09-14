@@ -39,6 +39,11 @@
       <End Role="tblVehicle" EntitySet="tblVehicles" />
     </AssociationSet>
     <EntitySet Name="tblUserLogins" EntityType="seleniumScrapeModel.tblUserLogin" />
+    <EntitySet Name="tblHtmlRows" EntityType="seleniumScrapeModel.tblHtmlRow" />
+    <AssociationSet Name="FK_tblHtmlRow_tblHtml" Association="seleniumScrapeModel.FK_tblHtmlRow_tblHtml">
+      <End Role="tblHtml" EntitySet="tblHtmls" />
+      <End Role="tblHtmlRow" EntitySet="tblHtmlRows" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -62,6 +67,7 @@
     <NavigationProperty Name="tblSearchSession" Relationship="seleniumScrapeModel.FK_tblHtml_tblSearchSession" FromRole="tblHtml" ToRole="tblSearchSession" />
     <NavigationProperty Name="tblVehicle" Relationship="seleniumScrapeModel.FK_tblHtml_tblVehicle1" FromRole="tblHtml" ToRole="tblVehicle" />
     <NavigationProperty Name="tblHtmlLinks" Relationship="seleniumScrapeModel.FK_tblHtmlLink_tblHtml" FromRole="tblHtml" ToRole="tblHtmlLink" />
+    <NavigationProperty Name="tblHtmlRows" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblHtml" FromRole="tblHtml" ToRole="tblHtmlRow" />
   </EntityType>
   <EntityType Name="tblHtmlLink">
     <Key>
@@ -223,4 +229,26 @@
     <Property Type="String" Name="tblUserLoginPassword" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Type="String" Name="tblUserLoginEmail" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="tblHtmlRow">
+    <Key>
+      <PropertyRef Name="html_row_id_PK" />
+    </Key>
+    <Property Type="Int32" Name="html_row_id_PK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="html_row_data" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="html_data_id_fk" />
+    <Property Type="String" Name="html_row_number" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblHtml" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblHtml" FromRole="tblHtmlRow" ToRole="tblHtml" />
+  </EntityType>
+  <Association Name="FK_tblHtmlRow_tblHtml">
+    <End Type="seleniumScrapeModel.tblHtml" Role="tblHtml" Multiplicity="0..1" />
+    <End Type="seleniumScrapeModel.tblHtmlRow" Role="tblHtmlRow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHtml">
+        <PropertyRef Name="html_id_pk" />
+      </Principal>
+      <Dependent Role="tblHtmlRow">
+        <PropertyRef Name="html_data_id_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

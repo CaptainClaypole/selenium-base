@@ -17,6 +17,10 @@ namespace auctionbaseUI.Models {
             get { return seleniumScrapeEntities.Current.tblHtmls; }
         }
 
+        public IQueryable<tblHtmlRow> HtmlRows {
+            get { return seleniumScrapeEntities.Current.tblHtmlRows; }
+        }
+
         public IQueryable<tblSearchSession> SearchSessions
         {
             get { return seleniumScrapeEntities.Current.tblSearchSessions; }
@@ -88,5 +92,14 @@ namespace auctionbaseUI.Models {
 
             return entitySetProperty.Name;
         }
+
+        #region IMyRepo Members
+
+
+        public IQueryable<tblHtml> Html {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
     }
 }

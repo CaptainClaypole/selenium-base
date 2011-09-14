@@ -1,4 +1,5 @@
-﻿@model IEnumerable<auctionbaseUI.Models.tblVehicle>
+﻿@model auctionbaseUI.Models.WelcomeViewData
+ 
 
 @{
     Layout = null;
@@ -9,27 +10,67 @@
 <html>
 <head>
     <title>Index</title>
-</head>
+</head> 
 <body>
     <p>
-     
+  @Html.DropDownList("Vehicle_Model", Model.selectList, Model.selectList)
+  @Html.ac
     </p>
+
+    
     <table>
         <tr>
-            <th></th>
+            <th>Search By Vehicle Model</th>
+            <br>
+            <br>
         </tr>
     
-    @foreach (var item in Model) {
+    @foreach (var item in Model.vehicleModels) {
       
         <tr>
             <td>
+             
                
-                @item.Vehicle_Make
-               @Html.ActionLink(item.Vehicle_Model, "Models", "MainNav", new { model = item.Vehicle_Model },null)
+                 @Html.ActionLink(item.Vehicle_Model, "Models", "MainNav", new { model = item.Vehicle_Model }, null)   
+               
+             
+              
+           
             </td>
         </tr>
     }
+
+    
     
     </table>
+
+    <table >
+    
+    <tr><td>
+    
+    <b>Search By Vehicle Type</b>
+
+    </td></tr>
+    <tr></tr>
+    <tr></tr>
+
+   
+     
+          
+
+      @foreach (var item in Model.vehicleDefinedTypes)
+      {
+       <tr>
+       <td> 
+
+      @Html.ActionLink(item.VehicleTypeDefined, "definedSearch", "MainNav", new {type = item.VehicleTypeDefined}, null)
+
+       </td>
+       </tr>
+
+      }
+
+       </table>
+     
 </body>
 </html>

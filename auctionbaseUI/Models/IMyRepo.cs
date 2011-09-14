@@ -6,11 +6,12 @@ namespace auctionbaseUI.Models
     {
         
         IQueryable<tblVehicle> Vehicles { get; }
-        IQueryable<tblHtml> Htmls { get; }
         IQueryable<tblSearchSession>  SearchSessions{ get; }
         IQueryable<tblVehicleTypeGeneral> GeneralTypes { get; }
         IQueryable<tblVehicleTypeDefined> DefinedTypes { get; }
         IQueryable<HTMLVehicle> GetLiteaceTownace { get; }
+        IQueryable<tblHtmlRow> HtmlRows { get; }
+        IQueryable<tblHtml> Html { get; } 
 
         void Add<T>(T item);
         void Delete<T>(T item);
