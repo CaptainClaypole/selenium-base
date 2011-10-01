@@ -1,4 +1,4 @@
-﻿@model IEnumerable<auctionbaseUI.Models.tblHtml>
+﻿@model IEnumerable<auctionbaseUI.Models.tblHtmlRow>
 
 @{
     Layout = null;
@@ -8,7 +8,7 @@
 
 <html>
 <head>
-    <title>Chevrolet Astro</title>
+    <title></title>
 </head>
 <body>
     <div>
@@ -20,7 +20,7 @@
    @foreach (var item in Model) {
       
              
-   @Html.Raw(item.html_data)
+   @Html.Raw(item.html_row_data)
                     
        }
        

@@ -25,7 +25,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblVehicle_tblVehicleType", "tblVehicleTypeCountry", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblVehicleTypeCountry), "tblVehicle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblVehicle), true)]
 [assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblVehicle_tblVehicleTypeDefined", "tblVehicleTypeDefined", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblVehicleTypeDefined), "tblVehicle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblVehicle), true)]
 [assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblVehicle_tblVehicleTypeGeneral", "tblVehicleTypeGeneral", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblVehicleTypeGeneral), "tblVehicle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblVehicle), true)]
-[assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblHtmlRow_tblHtml", "tblHtml", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblHtml), "tblHtmlRow", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblHtmlRow), true)]
 [assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblHtmlRow_tblSearchSession", "tblSearchSession", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblSearchSession), "tblHtmlRow", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblHtmlRow), true)]
 [assembly: EdmRelationshipAttribute("seleniumScrapeModel", "FK_tblHtmlRow_tblVehicle", "tblVehicle", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(auctionbaseUI.Models.tblVehicle), "tblHtmlRow", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(auctionbaseUI.Models.tblHtmlRow), true)]
 
@@ -757,28 +756,6 @@ namespace auctionbaseUI.Models
                 }
             }
         }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("seleniumScrapeModel", "FK_tblHtmlRow_tblHtml", "tblHtmlRow")]
-        public EntityCollection<tblHtmlRow> tblHtmlRows
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tblHtmlRow>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtmlRow");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tblHtmlRow>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtmlRow", value);
-                }
-            }
-        }
 
         #endregion
     }
@@ -1007,30 +984,6 @@ namespace auctionbaseUI.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> html_data_id_fk
-        {
-            get
-            {
-                return _html_data_id_fk;
-            }
-            set
-            {
-                Onhtml_data_id_fkChanging(value);
-                ReportPropertyChanging("html_data_id_fk");
-                _html_data_id_fk = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("html_data_id_fk");
-                Onhtml_data_id_fkChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _html_data_id_fk;
-        partial void Onhtml_data_id_fkChanging(Nullable<global::System.Int32> value);
-        partial void Onhtml_data_id_fkChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public global::System.String html_row_number
         {
             get
@@ -1125,44 +1078,6 @@ namespace auctionbaseUI.Models
         #endregion
     
         #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("seleniumScrapeModel", "FK_tblHtmlRow_tblHtml", "tblHtml")]
-        public tblHtml tblHtml
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tblHtml>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtml").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tblHtml>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtml").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tblHtml> tblHtmlReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tblHtml>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtml");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tblHtml>("seleniumScrapeModel.FK_tblHtmlRow_tblHtml", "tblHtml", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No Metadata Documentation available.

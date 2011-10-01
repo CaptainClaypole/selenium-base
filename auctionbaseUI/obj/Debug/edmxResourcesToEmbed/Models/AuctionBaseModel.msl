@@ -99,8 +99,10 @@
     <EntitySetMapping Name="tblHtmlRows">
       <EntityTypeMapping TypeName="seleniumScrapeModel.tblHtmlRow">
         <MappingFragment StoreEntitySet="tblHtmlRow">
+          <ScalarProperty Name="Vehicle_id_fk" ColumnName="Vehicle_id_fk" />
+          <ScalarProperty Name="Search_Session_ID_fk" ColumnName="Search_Session_ID_fk" />
+          <ScalarProperty Name="Search_Date_Timestamp" ColumnName="Search_Date_Timestamp" />
           <ScalarProperty Name="html_row_number" ColumnName="html_row_number" />
-          <ScalarProperty Name="html_data_id_fk" ColumnName="html_data_id_fk" />
           <ScalarProperty Name="html_row_data" ColumnName="html_row_data" />
           <ScalarProperty Name="html_row_id_PK" ColumnName="html_row_id_PK" />
         </MappingFragment>

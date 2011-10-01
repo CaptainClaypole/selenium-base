@@ -333,10 +333,6 @@
           </AssociationSet>
           <EntitySet Name="tblUserLogins" EntityType="seleniumScrapeModel.tblUserLogin" />
           <EntitySet Name="tblHtmlRows" EntityType="seleniumScrapeModel.tblHtmlRow" />
-          <AssociationSet Name="FK_tblHtmlRow_tblHtml" Association="seleniumScrapeModel.FK_tblHtmlRow_tblHtml">
-            <End Role="tblHtml" EntitySet="tblHtmls" />
-            <End Role="tblHtmlRow" EntitySet="tblHtmlRows" />
-          </AssociationSet>
           <AssociationSet Name="FK_tblHtmlRow_tblSearchSession" Association="seleniumScrapeModel.FK_tblHtmlRow_tblSearchSession">
             <End Role="tblSearchSession" EntitySet="tblSearchSessions" />
             <End Role="tblHtmlRow" EntitySet="tblHtmlRows" />
@@ -345,7 +341,7 @@
             <End Role="tblVehicle" EntitySet="tblVehicles" />
             <End Role="tblHtmlRow" EntitySet="tblHtmlRows" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -368,7 +364,6 @@
           <NavigationProperty Name="tblSearchSession" Relationship="seleniumScrapeModel.FK_tblHtml_tblSearchSession" FromRole="tblHtml" ToRole="tblSearchSession" />
           <NavigationProperty Name="tblVehicle" Relationship="seleniumScrapeModel.FK_tblHtml_tblVehicle1" FromRole="tblHtml" ToRole="tblVehicle" />
           <NavigationProperty Name="tblHtmlLinks" Relationship="seleniumScrapeModel.FK_tblHtmlLink_tblHtml" FromRole="tblHtml" ToRole="tblHtmlLink" />
-          <NavigationProperty Name="tblHtmlRows" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblHtml" FromRole="tblHtml" ToRole="tblHtmlRow" />
         </EntityType>
         <EntityType Name="tblHtmlLink">
           <Key>
@@ -538,27 +533,13 @@
           </Key>
           <Property Type="Int32" Name="html_row_id_PK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="html_row_data" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="html_data_id_fk" />
           <Property Type="String" Name="html_row_number" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="tblHtml" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblHtml" FromRole="tblHtmlRow" ToRole="tblHtml" />
           <Property Type="DateTime" Name="Search_Date_Timestamp" />
           <Property Type="Int32" Name="Search_Session_ID_fk" />
           <Property Type="Int32" Name="Vehicle_id_fk" />
           <NavigationProperty Name="tblSearchSession" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblSearchSession" FromRole="tblHtmlRow" ToRole="tblSearchSession" />
           <NavigationProperty Name="tblVehicle" Relationship="seleniumScrapeModel.FK_tblHtmlRow_tblVehicle" FromRole="tblHtmlRow" ToRole="tblVehicle" />
         </EntityType>
-        <Association Name="FK_tblHtmlRow_tblHtml">
-          <End Type="seleniumScrapeModel.tblHtml" Role="tblHtml" Multiplicity="0..1" />
-          <End Type="seleniumScrapeModel.tblHtmlRow" Role="tblHtmlRow" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblHtml">
-              <PropertyRef Name="html_id_pk" />
-            </Principal>
-            <Dependent Role="tblHtmlRow">
-              <PropertyRef Name="html_data_id_fk" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tblHtmlRow_tblSearchSession">
           <End Type="seleniumScrapeModel.tblSearchSession" Role="tblSearchSession" Multiplicity="0..1" />
           <End Type="seleniumScrapeModel.tblHtmlRow" Role="tblHtmlRow" Multiplicity="*" />
@@ -583,7 +564,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -693,23 +674,23 @@
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtml_tblSearchSession" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="9.0011090360439372" />
           <ConnectorPoint PointX="4.875" PointY="8.6261090360439372" />
-          <ConnectorPoint PointX="4.875" PointY="5.1292641693121137" />
-          <ConnectorPoint PointX="5.25" PointY="5.1292641693121137" />
+          <ConnectorPoint PointX="4.875" PointY="5.0298767296422806" />
+          <ConnectorPoint PointX="5.25" PointY="5.0298767296422806" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtml_tblVehicle1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.2521320846560569" />
-          <ConnectorPoint PointX="5.25" PointY="4.2521320846560569" />
+          <ConnectorPoint PointX="4.5" PointY="4.20243836482114" />
+          <ConnectorPoint PointX="5.25" PointY="4.20243836482114" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtmlLink_tblHtml" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="4.6799544166525209" />
           <ConnectorPoint PointX="7.5" PointY="4.6799544166525209" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblPage_tblVehicle" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.97875814453125" PointY="6.2785285951693846" />
-          <ConnectorPoint PointX="3.97875814453125" PointY="8.1975722428706153" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="8.1975722428706153" />
-          <ConnectorPoint PointX="5.020833333333333" PointY="8.1975722428706153" />
-          <ConnectorPoint PointX="5.25" PointY="8.1975722428706153" />
+          <ConnectorPoint PointX="3.9869717678833005" PointY="6.2785285951693846" />
+          <ConnectorPoint PointX="3.9869717678833005" PointY="8.1982616131512849" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="8.1982616131512849" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="8.1982616131512849" />
+          <ConnectorPoint PointX="5.25" PointY="8.1982616131512849" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblVehicle_tblVehicleType" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="4.5965234285593031" />
@@ -721,35 +702,27 @@
           <ConnectorPoint PointX="3.75" PointY="3" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblVehicle_tblVehicleTypeGeneral" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.6612861214353076" />
-          <ConnectorPoint PointX="3.4581265722656251" PointY="7.6612861214353076" />
-          <ConnectorPoint PointX="3.4581265722656251" PointY="6.2785285951693846" />
+          <ConnectorPoint PointX="2.25" PointY="7.6616308065756424" />
+          <ConnectorPoint PointX="3.4622333839416504" PointY="7.6616308065756424" />
+          <ConnectorPoint PointX="3.4622333839416504" PointY="6.2785285951693846" />
         </AssociationConnector>
         <EntityTypeShape EntityType="seleniumScrapeModel.tblUserLogin" Width="1.5" PointX="5.375" PointY="0.75" Height="1.6099088333050418" />
-        <EntityTypeShape EntityType="seleniumScrapeModel.tblHtmlRow" Width="1.5" PointX="7.5" PointY="9.875" Height="1.7767708094914774" />
-        <AssociationConnector Association="seleniumScrapeModel.FK_tblHtmlRow_tblHtml" >
-          <ConnectorPoint PointX="6.75" PointY="5.9442187142372127" />
-          <ConnectorPoint PointX="7.125" PointY="6.3192187142372127" />
-          <ConnectorPoint PointX="7.125" PointY="11.180540345211824" />
-          <ConnectorPoint PointX="7.5" PointY="11.180540345211824" />
-        </AssociationConnector>
+        <EntityTypeShape EntityType="seleniumScrapeModel.tblHtmlRow" Width="1.5" PointX="5.25" PointY="9.625" Height="2.2773567380507771" />
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtmlRow_tblSearchSession" >
-          <ConnectorPoint PointX="4.5" PointY="10.159023428559303" />
-          <ConnectorPoint PointX="4.854166666666667" PointY="10.159023428559303" />
-          <ConnectorPoint PointX="5.020833333333333" PointY="10.159023428559303" />
-          <ConnectorPoint PointX="7.041666666666667" PointY="10.159023428559303" />
-          <ConnectorPoint PointX="7.208333333333333" PointY="10.159023428559303" />
-          <ConnectorPoint PointX="7.5" PointY="10.159023428559303" />
+          <ConnectorPoint PointX="4.5" PointY="10.034023428559303" />
+          <ConnectorPoint PointX="4.854166666666667" PointY="10.034023428559303" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="10.034023428559303" />
+          <ConnectorPoint PointX="5.25" PointY="10.034023428559303" />
         </AssociationConnector>
         <AssociationConnector Association="seleniumScrapeModel.FK_tblHtmlRow_tblVehicle" >
           <ConnectorPoint PointX="4.5" PointY="6.2162199028616918" />
           <ConnectorPoint PointX="4.8160744349011217" PointY="6.5322943377628127" />
           <ConnectorPoint PointX="4.9339255650988791" PointY="6.6501454679605709" />
           <ConnectorPoint PointX="4.9375" PointY="6.6537199028616918" />
-          <ConnectorPoint PointX="4.9375" PointY="11.864562517817738" />
-          <ConnectorPoint PointX="7.5" PointY="11.864562517817738" />
+          <ConnectorPoint PointX="4.9375" PointY="10.999442083305041" />
+          <ConnectorPoint PointX="5.25" PointY="10.999442083305041" />
         </AssociationConnector>
-      </Diagram>
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

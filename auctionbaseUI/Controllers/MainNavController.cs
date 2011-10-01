@@ -30,7 +30,7 @@ namespace auctionbaseUI.Controllers
         public ActionResult Models(string model) {
 
             //var vehicles = GetAllDefinedTypeOfVehicles(type);
-            var vehicles = GetAllVehicles(model);
+            var vehicles = GetModels(model);
 
             ViewBag.Data = model;
 
@@ -65,18 +65,18 @@ namespace auctionbaseUI.Controllers
         }
 
 
-        private List<tblHtml> GetAllVehicles(string vehicleModel) {
+        private List<tblHtmlRow> GetModels(string vehicleModel) {
 
             int latestSession = GetLatestSearchSession();
 
             var query = from v in _myRepo.Vehicles
-                        from h in v.tblHtmls
+                        from h in v.tblHtmlRows 
                         
                         where v.Vehicle_Model == vehicleModel && h.Search_Session_ID_fk == latestSession
                         select h;
 
             return query
-                .OrderBy(s => s.html_id_pk)
+                .OrderBy(s => s.html_row_id_PK)
                 .ToList();
 
         }
@@ -95,37 +95,7 @@ namespace auctionbaseUI.Controllers
 
 
         }
-        // FIX THIS BIT NEXT.
-        private List<tblHtmlRow> GetAllHtmlIds(List<int> htmlBatchList)
-        {
-
-            var htmlRows = new List<string>();
-
-           
-                var query = from h in _myRepo.Html
-                            from r in h.tblHtmlRows
-                            where r.html_data_id_fk == html_id 
-                            select r.html_row_data;
-
-                foreach (var htmlRow in query)
-                {
-                    htmlRows.Add(htmlRow);
-                }
-                htmlRows.Add()
-            }
-          
-
-           
-
-                       
-
-                        
-                        
-
-            return query.ToList();
-
-
-        }
+      
 
 
         private int GetLatestSearchSession() {
